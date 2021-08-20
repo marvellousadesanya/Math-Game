@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>MATH GAME</h1>
+      <p>Test your math speed!</p>
+      <p class="timer hidden"></p>
+      <p id="instruction">
+        You have approximately 5 mins to finish this test, 15 seconds for each
+        question.
+      </p>
+      <button class="btn ready">Ready!</button>
+    </header>
+    <main class="hidden">
+      <section class="left">
+        <h2><span id="question">391 + 349</span>?</h2>
+        <input type="number" id="answer" />
+        <button class="btn submit">Submit</button>
+      </section>
+      <section class="right">
+        <p class="feedback hidden"></p>
+        <p>Scores: <span class="score">0</span></p>
+        <p class="positive hidden">Great at Math! 👍</p>
+        <p class="negative hidden">Bad at Math! 👎</p>
+        <button class="btn next">Next</button>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
