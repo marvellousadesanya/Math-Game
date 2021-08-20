@@ -4,21 +4,16 @@ const quizzes = [
   "1203 - 349",
   "238 + 43",
   "23 * 19",
-  "454 + 548",
   "345 * 11",
   "22 * 8",
   "420 / 7",
   "24 / 2",
   "336 / 3",
-  "23 + 787",
   "21 * 74",
-  "111 + 409",
   "34 + 459",
   "45 / 3",
   "66 * 2",
-  "123 + 56",
-  "324 + 57",
-  "33 / 5",
+  "13 + 56",
   "104 + 45",
   "34 * 7",
 ];
@@ -50,15 +45,15 @@ const showQuiz = () => {
   setTimeout(() => {
     // Total countdown timer
     playing = false;
-    questtion.textContent = "";
+    question.textContent = "";
     nextBtn.classList.add("hidden");
     feedback.textContent = "Time up!";
     feedback.classList.remove("hidden");
     clearInterval(handle);
-    if (score >= 15) {
+    if (score >= 10) {
       console.log("Good at math");
       document.querySelector(".positive").classList.remove("hidden");
-    } else if (score > 1 && score < 2) {
+    } else if (score > 7 && score < 10) {
       console.log("Moderate Math speed");
       document.querySelector(".positive").textContent = "Moderate at Math! 👍";
     } else {
@@ -66,7 +61,7 @@ const showQuiz = () => {
       document.querySelector(".negative").classList.remove("hidden");
       // document.querySelector("body").style.backgroundColor = "rgb(211, 54, 54)";
     }
-  }, 300000);
+  }, 110000);
 };
 
 readyBtn.addEventListener("click", showQuiz); // Button that begins the game
@@ -134,23 +129,6 @@ function newQuestion() {
   correctAnswer = eval(generateQuestion());
   initiateCountdown();
 }
-
-// score == 5 ? (playing = false) : true;
-
-// setTimeout(() => {
-//   playing = false;
-//   nextBtn.classList.add("hidden");
-//   if (score >= 15) {
-//     console.log("Good at math");
-//     document.querySelector(".positive").classList.remove("hidden");
-//   } else if (score > 1 && score < 2) {
-//     console.log("Moderate Math speed");
-//     document.querySelector(".positive").textContent = "Moderate at Math! 👍";
-//   } else {
-//     console.log("Bad at math");
-//     document.querySelector(".negative").classList.remove("hidden");
-//   }
-// }, 20000);
 
 submitBtn.addEventListener("click", checkAnswer);
 nextBtn.addEventListener("click", newQuestion);
